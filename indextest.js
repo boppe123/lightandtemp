@@ -27,6 +27,13 @@ restService.post("/webhooker", function(req, res) {
   }).catch(() => {
     res.json({ 'fulfillmentText': 'something is wrong' });
   });
+ }
+  if (Unit == 'state' && state == 'on'){
+	 callThingApiON().then((output) => {
+    res.json({ 'fulfillmentText': output }); // Return the results of the weather API to Dialogflow
+  }).catch(() => {
+    res.json({ 'fulfillmentText': 'something is wrong' });
+  });
  }else{
 	callThingApiOFF().then((output) => {
     res.json({ 'fulfillmentText': output }); // Return the results of the weather API to Dialogflow
@@ -34,7 +41,8 @@ restService.post("/webhooker", function(req, res) {
     res.json({ 'fulfillmentText': 'something is wrong' });
   }); 
  }
-});
+	 
+ });
 
 
 
