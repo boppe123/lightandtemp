@@ -67,7 +67,7 @@ function callThingApi () {
         let response = JSON.parse(body);
         let statuss = response.feeds[0].field1;
         // Create response
-        let output = 'The status of the lamp is ' + statuss + ';
+        let output = 'The status of the lamp is ' + statuss + 'hi';
 
         // Resolve the promise with the output text
         console.log(output);
